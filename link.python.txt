@@ -1,0 +1,79 @@
+PRACTICLE (PART 2)
+    
+class LandCruiser:
+    def __init__(self, year, color, brand="Toyota", speed=0):
+        """
+        Initializes a new instance of the LandCruiser class.
+
+        :param year: The manufacture year of the Land Cruiser (int)
+        :param color: The color of the Land Cruiser (str)
+        :param brand: The brand of the vehicle, default is 'Toyota' (str)
+        :param speed: The current speed of the vehicle in km/h, default is 0 (int)
+        """
+        self.year = year       # The year the vehicle was made
+        self.color = color     # The color of the vehicleself.brand = brand     # The brand of the vehicle (default is Toyota)
+        self.speed = speed     # The current speed of the vehicle
+    
+    def accelerate(self, increase):
+        """
+        Increases the speed of the Land Cruiser.
+
+        :param increase: The amount to increase the speed by (int)
+        """
+        self.speed += increase
+        print(f"The speed is now {self.speed} km/h.")
+
+    def brake(self, decrease):
+        """
+        Decreases the speed of the Land Cruiser.
+
+        :param decrease: The amount to decrease the speed by (int)
+        """
+        self.speed = max(0, self.speed - decrease)  # Ensure speed doesn't go below 0
+        print(f"The speed is now {self.speed} km/h.")
+
+    def display_info(self):
+        """
+        Displays information about the Land Cruiser.
+        """
+        print(f"Brand: {self.brand}")
+        print(f"Year: {self.year}")
+        print(f"Color: {self.color}")
+        print(f"Current Speed: {self.speed} km/h")
+
+
+# Example of how to use the LandCruiser class
+if __name__ == "__main__":
+    # Create a new Land Cruiser object
+    my_land_cruiser = LandCruiser(year=2020, color="Black")
+
+    # Display its information
+    my_land_cruiser.display_info()
+
+    # Accelerate the vehicle
+    my_land_cruiser.accelerate(30)
+
+    # Brake the vehicle
+    my_land_cruiser.brake(10)
+
+    # Display updated information
+    my_land_cruiser.display_info()
+
+
+ Explanation
+1. Class Definition: We define a class named LandCruiser that encapsulates all attributes and methods related to this vehicle.
+   
+2. __init__ Method: This is the constructor method that initializes the object's attributes when a new instance is created. We set default values for brand and speed.
+
+3. Attribute Annotations: Each attribute such as year, color, brand, and speed has a specific type and description.
+
+4. Methods:
+   - accelerate(): Increases the speed of the vehicle by a specified amount.
+   - brake(): Decreases the speed but ensures that it doesn't drop below zero.
+   - display_info(): Prints the current state of the vehicle, including brand, year, color, and speed.
+
+5. Main Block: The code under if __name__ == "__main__": is an example demonstrating how to create an instance of the LandCruiser and utilize its methods. 
+
+
+
+
